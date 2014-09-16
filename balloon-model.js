@@ -69,28 +69,6 @@ angular.module('balloonModel', [])
     this.renderer.init(this.physics);
     this.mousemove({'preventDefault' : function (){}} );
 
-    /// MOVE THIS TO DIRECTIVE
-    // var $balloonInstance = this;
-    // $balloonInstance.inside = false;
-    // $(function () {
-    //   $('.focusOnHover').hover(function (event) {
-    //     var element = $(this);
-    //     var percentage = element.offset().top / document.body.clientHeight;
-    //     var screenPosition = percentage * document.documentElement.clientHeight;
-    //     $balloonInstance.mousemove(event,
-    //                                element.offset().left + (element.width() / 2),
-    //                                screenPosition + (element.height() / 2));
-    //   }, function(event) {
-    //     // Reset to center.
-    //     $balloonInstance.mousemove(event);
-    //   });
-
-    //   /// Re-set when hovering over main image
-    //   $('.profile-image').hover(function (event) {
-    //     $balloonInstance.inside = false;
-    //   });
-    // });
-
     return this.resize();
   };
 
