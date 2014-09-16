@@ -1,12 +1,12 @@
 //= require ./Behaviour.js
 
-angular.module('Attraction', ['Demo'])
-.factory('Attraction', function (Demo) {
+angular.module('Attraction', ['Behaviour'])
+.factory('Attraction', function (Behaviour) {
 
   var __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  __extends(Attraction, Demo);
+  __extends(Attraction, Behaviour);
 
   function Attraction(target, radius, strength) {
     this.target = target != null ? target : new Vector();
