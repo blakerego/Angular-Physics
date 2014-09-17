@@ -1,5 +1,5 @@
-angular.module('balloonCenterOfGravity', ['balloonModel'])
-.directive('balloonCenterOfGravity', function (balloonModel) {
+angular.module('physBalloonPlanet', ['balloonModel'])
+.directive('physBalloonPlanet', function (balloonModel) {
 
   return {
     link: function (scope, element, attrs) {
