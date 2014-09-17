@@ -1,8 +1,5 @@
-angular.module('Wander', ['Behaviour'])
-.factory('Wander', function (Behaviour) {
-
-  var __hasProp = {}.hasOwnProperty,
-    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+angular.module('Wander', ['Behaviour', 'physUtils'])
+.factory('Wander', function (Behaviour, __extends) {
 
   __extends(Wander, Behaviour);
 

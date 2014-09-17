@@ -1,7 +1,6 @@
-var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
-angular.module('Demo', [])
-.factory('Demo', function () {
+angular.module('Demo', ['physUtils'])
+.factory('Demo', function (__bind) {
 
   Demo.COLOURS = ['DC0048', 'F14646', '4AE6A9', '7CFF3F', '4EC9D9', 'E4272E'];
 
