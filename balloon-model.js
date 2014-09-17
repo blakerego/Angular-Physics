@@ -1,18 +1,26 @@
-angular.module('balloonModel', ['physUtils'])
-.factory('balloonModel', function (__bind) {
+angular.module('balloonModel', [
+  'physUtils',
+  'Demo',
+  'Attraction',
+  'Wander'
+  ])
+.factory('balloonModel', function (
+  Demo,
+  Attraction,
+  Wander,
+  __bind,
+  __extends
+  ) {
 
-  var COLOURS = ['22242D', '3D4153', '485072', '6673A3', '97A3D3'];;
+  var COLOURS = ['22242D', '3D4153', '485072', '6673A3', '97A3D3'];
 
+  var ref;
   function BalloonModel() {
-    this.mousemove = __bind(this.mousemove, this);
-    this.resize = __bind(this.resize, this);    this.physics = new Physics();
-    this.mouse = new Particle();
-    this.mouse.fixed = true;
-    this.height = window.innerHeight;
-    this.width = window.innerWidth;
-    this.renderTime = 0;
-    this.counter = 0;
+    _ref = BalloonModel.__super__.constructor.apply(this, arguments);
+    return _ref;
   }
+
+    __extends(BalloonModel, Demo);
 
   BalloonModel.prototype.setup = function(full) {
     var attraction, i, max, p, s, _i, _results;
@@ -57,7 +65,7 @@ angular.module('balloonModel', ['physUtils'])
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
       particle = _ref[_i];
       if ((_ref1 = particle.colour) == null) {
-        particle.colour = Random.item(Demo.COLOURS);
+        particle.colour = Random.item(COLOURS);
       }
     }
     document.addEventListener('touchmove', this.mousemove, false);
@@ -67,7 +75,7 @@ angular.module('balloonModel', ['physUtils'])
     this.renderer.mouse = this.mouse;
     this.renderer.init(this.physics);
     this.mousemove({'preventDefault' : function (){}} );
-
+    this.inside = false;
     return this.resize();
   };
 
@@ -106,7 +114,7 @@ angular.module('balloonModel', ['physUtils'])
   */
 
 
-  BalloonModel.prototype.mousemove = function(event) {
+  BalloonModel.prototype.mousemove = function(event, x, y) {
     var touch;
 
     event.preventDefault();
@@ -114,7 +122,14 @@ angular.module('balloonModel', ['physUtils'])
       touch = event.touches[0];
       return this.mouse.pos.set(touch.pageX, touch.pageY);
     } else {
-      return this.mouse.pos.set(event.clientX, event.clientY);
+      if (!this.inside && (x == null || y == null)) {
+        return this.mouse.pos.set(this.width / 2, this.height / 3);
+      } else if (event.type === "mouseenter" || event.type === "mouseover") {
+        this.inside = true;
+        if (this.mouse != null) {
+          return this.mouse.pos.set(x, y);
+        }
+      }
     }
   };
 
