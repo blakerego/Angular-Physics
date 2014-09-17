@@ -1,7 +1,6 @@
-angular.module('balloonModel', [])
-.factory('balloonModel', function () {
+angular.module('balloonModel', ['physUtils'])
+.factory('balloonModel', function (__bind) {
 
-  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
   var COLOURS = ['22242D', '3D4153', '485072', '6673A3', '97A3D3'];;
 
   function BalloonModel() {
