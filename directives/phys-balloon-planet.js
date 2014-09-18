@@ -1,10 +1,10 @@
 angular.module('physBalloonPlanet', [
-  'balloonModel',
+  'balloons',
   'WebGLRenderer',
   'physContainer'
   ])
 .directive('physBalloonPlanet', function (
-  balloonModel,
+  balloonModelInstance,
   WebGLRenderer
   ) {
 
@@ -21,13 +21,11 @@ angular.module('physBalloonPlanet', [
         } else {
           container = physContainer.el;
         }
-        
-        if ($balloonInstance) {
-          $balloonInstance.destroy();
-          $balloonInstance = null;
+
+        $balloonInstance = balloonModelInstance;
+        if (!$balloonInstance.initiated) {
+          $balloonInstance.init(container.get(0), new WebGLRenderer());
         }
-        $balloonInstance = new balloonModel();
-        $balloonInstance.init(container.get(0), new WebGLRenderer());
         update();
       }
 

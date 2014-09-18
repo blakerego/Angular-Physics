@@ -1,10 +1,10 @@
-angular.module('balloonModel', [
+angular.module('balloons', [
   'physUtils',
   'Demo',
   'Attraction',
   'Wander'
   ])
-.factory('balloonModel', function (
+.factory('BalloonModel', function (
   Demo,
   Attraction,
   Wander,
@@ -20,7 +20,7 @@ angular.module('balloonModel', [
     return _ref;
   }
 
-    __extends(BalloonModel, Demo);
+  __extends(BalloonModel, Demo);
 
   BalloonModel.prototype.setup = function(full) {
     var attraction, i, max, p, s, _i, _results;
@@ -76,6 +76,7 @@ angular.module('balloonModel', [
     this.renderer.init(this.physics);
     this.mousemove({'preventDefault' : function (){}} );
     this.inside = false;
+    this.initiated = true;
     return this.resize();
   };
 
@@ -90,8 +91,6 @@ angular.module('balloonModel', [
 
   /* Clean up after yourself.
   */
-
-
   BalloonModel.prototype.destroy = function() {
     var error;
 
@@ -107,7 +106,7 @@ angular.module('balloonModel', [
     this.physics.destroy();
     this.renderer = null;
     this.physics = null;
-    return this.mouse = null;
+    this.mouse = null;
   };
 
   /* Handler for window mousemove event.
@@ -117,10 +116,15 @@ angular.module('balloonModel', [
   BalloonModel.prototype.mousemove = function(event, x, y) {
     var touch;
 
-    event.preventDefault();
-    if (event.touches && !!event.touches.length) {
+    function moveForMobile(touches) {
+      /// For mobile devices, center of gravity will be finter.
       touch = event.touches[0];
       return this.mouse.pos.set(touch.pageX, touch.pageY);
+    }
+
+    event.preventDefault();
+    if (event.touches && !!event.touches.length) {
+      moveForMobile(touches);
     } else {
       if (!this.inside && (x == null || y == null)) {
         return this.mouse.pos.set(this.width / 2, this.height / 3);
@@ -133,6 +137,12 @@ angular.module('balloonModel', [
     }
   };
 
-
   return BalloonModel;
+})
+.service('balloonModelInstance', function (BalloonModel) {
+  var instance;
+  if (instance == null) {
+    instance = new BalloonModel();
+  }
+  return instance;
 });
