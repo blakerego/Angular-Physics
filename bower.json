@@ -1,5 +1,8 @@
 {
   "name": "angular-physics",
+  "description": "Javascript library that wraps a physics engine in angular modules",
+  "main":"*",
+  "ignore": [],
   "version": "0.1.0",
   "dependencies": {
     "angular": "~1.2.24"
