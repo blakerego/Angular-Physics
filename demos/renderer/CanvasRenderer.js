@@ -1,5 +1,5 @@
 angular.module('CanvasRenderer', ['physUtils', 'Renderer'])
-.factory('CanvasRenderer', function (__bind, __extends, Renderer) {
+.factory('CanvasRenderer', ['__bind', '__extends', 'Renderer', function (__bind, __extends, Renderer) {
 
   __extends(CanvasRenderer, Renderer);
 
@@ -65,4 +65,4 @@ angular.module('CanvasRenderer', ['physUtils', 'Renderer'])
 
   return CanvasRenderer;
 
-});
+}]);

@@ -1,5 +1,5 @@
 angular.module('Collision', ['Behaviour', 'physUtils'])
-.factory('Collision', function (Behaviour, __extends, __hasProp) {
+.factory('Collision', ['Behaviour', '__extends', '__hasProp', function (Behaviour, __extends, __hasProp) {
 
   __extends(Collision, Behaviour);
 
@@ -43,6 +43,6 @@ angular.module('Collision', ['Behaviour', 'physUtils'])
 
   return Collision;
 
-});
+}]);
 
 

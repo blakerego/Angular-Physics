@@ -1,5 +1,5 @@
 angular.module('Attraction', ['Behaviour', 'physUtils'])
-.factory('Attraction', function (Behaviour, __extends, __hasProp) {
+.factory('Attraction', ['Behaviour', '__extends', '__hasProp', function (Behaviour, __extends, __hasProp) {
 
   __extends(Attraction, Behaviour);
 
@@ -34,4 +34,4 @@ angular.module('Attraction', ['Behaviour', 'physUtils'])
 
   return Attraction;
 
-});
+}]);

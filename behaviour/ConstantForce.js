@@ -1,5 +1,5 @@
 angular.module('ConstantForce', ['Behaviour', 'physUtils'])
-.factory('ConstantForce', function (Behaviour, __extends, __hasProp) {
+.factory('ConstantForce', ['Behaviour', '__extends', '__hasProp', function (Behaviour, __extends, __hasProp) {
 
   __extends(ConstantForce, Behaviour);
 
@@ -14,4 +14,4 @@ angular.module('ConstantForce', ['Behaviour', 'physUtils'])
 
   return ConstantForce;
 
-});
+}]);

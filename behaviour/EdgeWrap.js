@@ -1,5 +1,5 @@
 angular.module('EdgeWrap', ['Behaviour', 'physUtils'])
-.factory('EdgeWrap', function (Behaviour, __extends, __hasProp) {
+.factory('EdgeWrap', ['Behaviour', '__extends', '__hasProp',function (Behaviour, __extends, __hasProp) {
 
   __extends(EdgeWrap, Behaviour);
 
@@ -27,4 +27,4 @@ angular.module('EdgeWrap', ['Behaviour', 'physUtils'])
   };
 
   return EdgeWrap;
-});
+}]);

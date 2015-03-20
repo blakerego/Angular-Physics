@@ -1,5 +1,5 @@
 angular.module('EdgeBounce', ['Behaviour', 'physUtils'])
-.factory('EdgeBounce', function (Behaviour, __extends, __hasProp) {
+.factory('EdgeBounce', ['Behaviour', '__extends', '__hasProp', function (Behaviour, __extends, __hasProp) {
 
   __extends(EdgeBounce, Behaviour);
 
@@ -24,4 +24,4 @@ angular.module('EdgeBounce', ['Behaviour', 'physUtils'])
 
   return EdgeBounce;
 
-});
+}]);

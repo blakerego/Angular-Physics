@@ -1,5 +1,5 @@
 angular.module('physContainer', [])
-.directive('physContainer', function () {
+.directive('physContainer', [function () {
 
   return {
     el: null,
@@ -7,4 +7,4 @@ angular.module('physContainer', [])
       this.el = element;
     }
   };
-});
+}]);

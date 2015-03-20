@@ -1,6 +1,6 @@
 
 angular.module('Demo', ['physUtils'])
-.factory('Demo', function (__bind) {
+.factory('Demo', ['__bind', function (__bind) {
 
   Demo.COLOURS = ['DC0048', 'F14646', '4AE6A9', '7CFF3F', '4EC9D9', 'E4272E'];
 
@@ -111,5 +111,5 @@ angular.module('Demo', ['physUtils'])
 
   return Demo;
 
-});
+}]);
 

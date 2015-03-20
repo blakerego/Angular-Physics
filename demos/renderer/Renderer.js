@@ -1,5 +1,5 @@
 angular.module('Renderer', ['physUtils'])
-.factory('Renderer', function (__bind) {
+.factory('Renderer', ['__bind', function (__bind) {
   function Renderer() {
     this.setSize = __bind(this.setSize, this);    this.width = 0;
     this.height = 0;
@@ -29,4 +29,4 @@ angular.module('Renderer', ['physUtils'])
 
   return Renderer;
 
-});
+}]);

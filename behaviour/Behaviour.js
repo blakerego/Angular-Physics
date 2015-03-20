@@ -1,5 +1,5 @@
 angular.module('Behaviour', [])
-.factory('Behaviour', function () {
+.factory('Behaviour', [function () {
   Behaviour.GUID = 0;
 
   function Behaviour() {
@@ -17,4 +17,4 @@ angular.module('Behaviour', [])
 
   return Behaviour;
 
-});
+}]);

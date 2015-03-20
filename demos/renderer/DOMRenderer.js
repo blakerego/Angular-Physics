@@ -1,5 +1,5 @@
 angular.module('DOMRenderer', ['physUtils', 'Renderer'])
-.factory('DOMRenderer', function (__bind, __extends, Renderer) {
+.factory('DOMRenderer', ['__bind', '__extends', 'Renderer', function (__bind, __extends, Renderer) {
 
   __extends(DOMRenderer, Renderer);
 
@@ -113,4 +113,4 @@ angular.module('DOMRenderer', ['physUtils', 'Renderer'])
 
   return DOMRenderer;
 
-});
+}]);

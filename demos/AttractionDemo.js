@@ -1,5 +1,5 @@
 angular.module('AttractionDemo', ['Attraction', 'Demo', 'physUtils'])
-.factory('AttractionDemo', function (Attraction, Demo, __extends) {
+.factory('AttractionDemo', ['Attraction', 'Demo', '__extends', function (Attraction, Demo, __extends) {
  
 
   __extends(AttractionDemo, Demo);
@@ -40,5 +40,5 @@ angular.module('AttractionDemo', ['Attraction', 'Demo', 'physUtils'])
   };
 
   return AttractionDemo;
-});
+}]);
 

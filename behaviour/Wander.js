@@ -1,5 +1,5 @@
 angular.module('Wander', ['Behaviour', 'physUtils'])
-.factory('Wander', function (Behaviour, __extends) {
+.factory('Wander', ['Behaviour', '__extends', function (Behaviour, __extends) {
 
   __extends(Wander, Behaviour);
 
@@ -19,4 +19,4 @@ angular.module('Wander', ['Behaviour', 'physUtils'])
 
   return Wander;
 
-});
+}]);
