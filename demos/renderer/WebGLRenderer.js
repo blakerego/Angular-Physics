@@ -1,5 +1,5 @@
 angular.module('WebGLRenderer', ['physUtils', 'Renderer'])
-.factory('WebGLRenderer', function (__bind, __extends, Renderer) {
+.factory('WebGLRenderer', ['__bind', '__extends', 'Renderer', function (__bind, __extends, Renderer) {
 
   __extends(WebGLRenderer, Renderer);
 
@@ -223,5 +223,5 @@ angular.module('WebGLRenderer', ['physUtils', 'Renderer'])
   return WebGLRenderer;
 
 
-});
+}]);
 

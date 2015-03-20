@@ -4,7 +4,7 @@ angular.module('balloons', [
   'Attraction',
   'Wander'
   ])
-.factory('BalloonModel', function (
+.factory('BalloonModel', ['Demo', 'Attraction', 'Wander', '__bind', '__extends', function (
   Demo,
   Attraction,
   Wander,
@@ -138,7 +138,7 @@ angular.module('balloons', [
   };
 
   return BalloonModel;
-})
+}])
 .service('balloonModelInstance', function (BalloonModel) {
   var instance;
   if (instance == null) {
