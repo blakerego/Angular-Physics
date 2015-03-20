@@ -3,7 +3,7 @@ angular.module('physBalloonPlanet', [
   'WebGLRenderer',
   'physContainer'
   ])
-.directive('physBalloonPlanet', function (
+.directive('physBalloonPlanet', ['balloonModelInstance', 'WebGLRenderer' , function (
   balloonModelInstance,
   WebGLRenderer
   ) {
@@ -66,4 +66,4 @@ angular.module('physBalloonPlanet', [
     }
   };
 
-});
+}]);
