@@ -5,7 +5,7 @@ angular.module('physUtils', [])
 })
 
 
-.factory('__extends', function (__hasProp) {
+.factory('__extends', ['__hasProp', function (__hasProp) {
  return function(child, parent) {
    for (var key in parent) {
      if (__hasProp.call(parent, key)) child[key] = parent[key];
@@ -19,7 +19,7 @@ angular.module('physUtils', [])
    return child;
  };
  
-})
+}])
 
 .factory('__bind', function () {
   return function(fn, me){

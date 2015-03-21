@@ -139,10 +139,10 @@ angular.module('balloons', [
 
   return BalloonModel;
 }])
-.service('balloonModelInstance', function (BalloonModel) {
+.service('balloonModelInstance', ['BalloonModel', function (BalloonModel) {
   var instance;
   if (instance == null) {
     instance = new BalloonModel();
   }
   return instance;
-});
+}]);
