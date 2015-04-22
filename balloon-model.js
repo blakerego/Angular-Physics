@@ -12,7 +12,8 @@ angular.module('balloons', [
   __extends
   ) {
 
-  var COLOURS = ['22242D', '3D4153', '485072', '6673A3', '97A3D3'];
+  // var COLOURS = ['22242D', '3D4153', '485072', '6673A3', '97A3D3'];
+  var COLOURS = ['33342D', '3D4153', '485072', '6673A3', '97A3D3'];
 
   var ref;
   function BalloonModel() {
@@ -30,7 +31,7 @@ angular.module('balloons', [
     }
     this.physics.integrator = new ImprovedEuler();
     attraction = new Attraction(this.mouse.pos);
-    max = full ? 400 : 200;
+    max = full ? 50 : 0;
     _results = [];
     for (i = _i = 0; 0 <= max ? _i <= max : _i >= max; i = 0 <= max ? ++_i : --_i) {
       p = new Particle(Random(0.25, 4.0));
@@ -38,7 +39,8 @@ angular.module('balloons', [
       p.behaviours.push(new Wander(0.2));
       p.behaviours.push(attraction);
       p.moveTo(new Vector(Random(this.width), Random(this.height)));
-      s = new Spring(this.mouse, p, Random(30, 300), 1.0);
+      // s = new Spring(this.mouse, p, Random(30, 300), 1.0);
+      s = new Spring(_results[i-1], p, Random(30, 300), 1.0);
       this.physics.particles.push(p);
       _results.push(this.physics.springs.push(s));
     }

@@ -8,8 +8,9 @@ angular.module('physBalloonPlanet', [
   WebGLRenderer
   ) {
 
-  return {
+  var balloonPlanet = {
     require: '?^physContainer', /// The modifier ?^ searches all parents for directive
+    playing:false,
     link: function (scope, element, attrs, physContainer) {
 
       var $balloonInstance, playing, renderer, container;
@@ -65,5 +66,7 @@ angular.module('physBalloonPlanet', [
 
     }
   };
+
+  return balloonPlanet;
 
 }]);
