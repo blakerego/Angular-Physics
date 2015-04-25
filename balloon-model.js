@@ -40,9 +40,9 @@ angular.module('balloons', [
       p.behaviours.push(attraction);
       p.moveTo(new Vector(Random(this.width), Random(this.height)));
       // s = new Spring(this.mouse, p, Random(30, 300), 1.0);
-      s = new Spring(_results[i-1], p, Random(30, 300), 1.0);
+      // s = new Spring(_results[i-1], p, Random(30, 300), 1.0);
       this.physics.particles.push(p);
-      _results.push(this.physics.springs.push(s));
+      // _results.push(this.physics.springs.push(s));
     }
     return _results;
   };
